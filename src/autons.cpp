@@ -973,6 +973,7 @@ void pb_red_right(){
   chassis.drive_distance(cm2inch(20), 3, 127, 50);
   chassis.drive_max_voltage = 8;
   chassis.drive_distance(cm2inch(-55), 55);
+  // chassis.turn_to_angle(180);
   chassis.drive_distance(cm2inch(-5), 180);
 
   wait(300, msec);
@@ -982,9 +983,22 @@ void pb_red_right(){
 
   // chassis.drive_distance(cm2inch(-30), 40);
   chassis.drive_stop(brake);
-
-  chassis.drive_distance(cm2inch(-10));
   topCap.set(true);
+  chassis.drive_distance(cm2inch(-20),180);
+  wait(500,msec);
+  topCap.set(0);
+  downRec.set(1);
+  wait(100,msec);
+  chassis.drive_max_voltage = 2;
+  chassis.drive_distance(cm2inch(60),180);
+  wait(500,msec);
+  chassis.drive_distance(cm2inch(-10),180);
+  chassis.drive_distance(cm2inch(10),180);
+  chassis.drive_distance(cm2inch(-50),180);
+  topCap.set(1);
+  // wait(300,msec);
+  // topCap.set(0);
+
   // wait(200, msec);
   // chassis.turn_to_angle(324);
   // chassis.drive_distance(cm2inch(45));
@@ -1001,3 +1015,5 @@ void pb_blue_right(){
 void pb_blue_left(){
 
 }
+
+
